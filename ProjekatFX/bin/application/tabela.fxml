@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Kontroler2">
+   <children>
+      <Pane fx:id="lijeviPane" prefHeight="550.0" prefWidth="200.0" style="-fx-background-color: #5f30a1;">
+         <children>
+            <Button fx:id="btnNovaRezervacija" alignment="CENTER_RIGHT" layoutY="106.0" mnemonicParsing="false" onAction="#otvoriPocetnu" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #5F30A1;" text="Nova Rezervacija" textAlignment="JUSTIFY" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" translateX="-3.0">
+                     <image>
+                        <Image url="@../../slike/booking_60px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnPodaci" alignment="CENTER" layoutY="193.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #5F30A1;" text="Podaci" textAlignment="JUSTIFY" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
+                     <image>
+                        <Image url="@../../slike/data_recovery_100px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnObrisi" alignment="CENTER" layoutY="476.0" mnemonicParsing="false" onAction="#eraseSelected" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #5F30A1;" text="Obrisi" textAlignment="JUSTIFY" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="63.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
+                     <image>
+                        <Image url="@../../slike/delete_database_200px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="gornjiPane" layoutX="200.0" prefHeight="84.0" prefWidth="700.0" style="-fx-background-color: #5f30a1;">
+         <children>
+            <Button fx:id="btnZatvori" layoutX="598.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #5F30A1;">
+               <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../slike/close_window_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <TextField fx:id="txtFieldPretrazi" layoutX="418.0" layoutY="40.0" prefHeight="25.0" prefWidth="162.0" promptText="Pretrazi">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <ImageView fitHeight="52.0" fitWidth="54.0" layoutX="350.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../slike/user_100px.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="200.0" layoutY="84.0" prefHeight="469.0" prefWidth="700.0" style="-fx-background-color: #48188C;">
+         <children>
+            <TableView fx:id="tabela" editable="true" onMouseClicked="#displaySelected" prefHeight="290.0" prefWidth="700.0" style="-fx-background-color: #9475C0;">
+              <columns>
+                <TableColumn fx:id="kolonaID" prefWidth="41.33331298828125" text="ID" />
+                <TableColumn fx:id="kolonaIme" prefWidth="81.33340454101562" text="Ime" />
+                  <TableColumn fx:id="kolonaPrezime" prefWidth="82.0" text="Prezime" />
+                  <TableColumn fx:id="kolonaDatumDolaska" prefWidth="97.99996948242188" text="Datum Dolaska" />
+                  <TableColumn fx:id="kolonaDatumOdlaska" prefWidth="99.99996948242188" text="Datum Odlaska" />
+                  <TableColumn fx:id="kolonaSmjestajnaJedinica" prefWidth="126.0" text="Smjestajna Jedinica" />
+                  <TableColumn fx:id="kolonaCijena" prefWidth="52.6666259765625" text="Cijena" />
+                  <TableColumn fx:id="kolonaUkupnoZaduzenje" minWidth="1.33331298828125" prefWidth="118.0" text="Ukupno Zaduzenje" />
+              </columns>
+            </TableView>
+            <TextField fx:id="txtFieldPodatakID" layoutX="14.0" layoutY="421.0" promptText="ID Podatak">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldBrTelefona" layoutX="14.0" layoutY="391.0" promptText="Broj telefona">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldIme" layoutX="14.0" layoutY="303.0" promptText="Ime">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldPrezime" layoutX="14.0" layoutY="332.0" promptText="Prezime">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldAdresa" layoutX="14.0" layoutY="361.0" promptText="Adresa">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldBrojNocenja" editable="false" layoutX="177.0" layoutY="303.0" promptText="Broj Nocenja">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldCijena" layoutX="177.0" layoutY="332.0" promptText="Cijena Nocenja">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldAvans" editable="false" layoutX="177.0" layoutY="361.0" promptText="Avans %">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldUkupnoZaduzenje" layoutX="177.0" layoutY="391.0" promptText="Ukupno Zaduzenje">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <DatePicker fx:id="datePickerDatumDolaska" layoutX="511.0" layoutY="302.0" promptText="Datum dolaska" />
+            <DatePicker fx:id="datePickerDatumOdlaska" layoutX="511.0" layoutY="343.0" promptText="Datum odlaska" />
+            <ComboBox fx:id="comboBoxSmjestajnaJedinica" editable="true" layoutX="350.0" layoutY="302.0" prefWidth="150.0" promptText="Smjestajna Jedinica" />
+            <Button fx:id="btnAzuriraj" layoutX="563.0" layoutY="401.0" mnemonicParsing="false" onAction="#azuriraj" prefHeight="63.0" prefWidth="137.0" style="-fx-background-color: #48188C;" text="Azuriraj" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../slike/data_recovery_100px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnUskladi" layoutX="350.0" layoutY="401.0" mnemonicParsing="false" onAction="#uskladiPodatke" prefHeight="63.0" prefWidth="194.0" style="-fx-background-color: #48188C;" text="Uskladi Podatke" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../slike/update_left_rotation_64px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Comic Sans MS" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

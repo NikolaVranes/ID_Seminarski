@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="okvir" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Kontroler">
+   <children>
+      <Pane fx:id="lijeviPane" prefHeight="550.0" prefWidth="200.0" style="-fx-background-color: #5f30a1;">
+         <children>
+            <Button fx:id="btnNovaRezervacija" alignment="CENTER_RIGHT" layoutY="106.0" mnemonicParsing="false" onAction="#novaRez" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #5F30A1;" text="Nova Rezervacija" textAlignment="JUSTIFY" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" translateX="-3.0">
+                     <image>
+                        <Image url="@../../slike/booking_60px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnPodaci" alignment="CENTER" layoutY="193.0" mnemonicParsing="false" onAction="#otvoriTabelu" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #5F30A1;" text="Podaci" textAlignment="JUSTIFY" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
+                     <image>
+                        <Image url="@../../slike/data_recovery_100px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnObrisi" alignment="CENTER" layoutY="476.0" mnemonicParsing="false" onAction="#reset" prefHeight="63.0" prefWidth="200.0" style="-fx-background-color: #5F30A1;" text="Obrisi" textAlignment="JUSTIFY" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="63.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
+                     <image>
+                        <Image url="@../../slike/delete_database_200px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="srednjiPane" layoutX="200.0" layoutY="83.0" prefHeight="467.0" prefWidth="700.0" style="-fx-background-color: #48188c;">
+         <children>
+            <DatePicker fx:id="datePickerDatumDolaska" layoutX="244.0" layoutY="36.0" promptText="Datum dolaska" />
+            <DatePicker fx:id="datePickerDatumOdlaska" layoutX="244.0" layoutY="86.0" promptText="Datum odlaska" />
+            <ComboBox fx:id="comboBoxSmjestajnaJedinica" editable="true" layoutX="467.0" layoutY="36.0" prefWidth="150.0" promptText="Smjestajna Jedinica" />
+            <TextField fx:id="txtFieldIme" layoutX="45.0" layoutY="37.0" promptText="Ime">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldPrezime" layoutX="45.0" layoutY="87.0" promptText="Prezime">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldAdresa" layoutX="45.0" layoutY="137.0" promptText="Adresa">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldBrTelefona" layoutX="45.0" layoutY="187.0" promptText="Broj telefona">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldBrojNocenja" editable="false" layoutX="253.0" layoutY="134.0" promptText="Broj Nocenja">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldPodatakID" layoutX="45.0" layoutY="234.0" promptText="ID Podatak">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldCijena" layoutX="255.0" layoutY="187.0" promptText="Cijena Nocenja">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldAvans" editable="false" layoutX="475.0" layoutY="134.0" promptText="Avans %">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtFieldUkupnoZaduzenje" layoutX="475.0" layoutY="187.0" promptText="Ukupno Zaduzenje">
+               <font>
+                  <Font name="Century Gothic" size="12.0" />
+               </font>
+            </TextField>
+            <Pane layoutX="79.0" layoutY="270.0" prefHeight="183.0" prefWidth="542.0" style="-fx-background-color: #5f30a1;">
+               <children>
+                  <TextArea fx:id="txtAreaZakljucak" layoutX="-2.0" prefHeight="182.0" prefWidth="548.0" style="-fx-border-color: #5F30A1; -fx-border-width: 7px;">
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="gornjiPane" layoutX="200.0" layoutY="-1.0" prefHeight="84.0" prefWidth="700.0" style="-fx-background-color: #5f30a1;">
+         <children>
+            <Button fx:id="btnZatvori" layoutX="598.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="36.0" prefWidth="94.0" style="-fx-background-color: #5F30A1;">
+               <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../slike/close_window_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children></Pane>
+   </children>
+</Pane>
